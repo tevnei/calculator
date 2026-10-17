@@ -2,24 +2,24 @@ name: Java CI - Calculator
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout source code
+      - name: Check out source code
         uses: actions/checkout@v4
 
-      - name: Set up JDK 21
+      - name: Set up JDK 11 and cache Maven dependencies
         uses: actions/setup-java@v4
         with:
-          java-version: '21'
+          java-version: '11'
           distribution: 'temurin'
-          cache: maven          # 开启 Maven 依赖缓存
+          cache: maven
 
       - name: Compile the project
         run: mvn -B clean compile
