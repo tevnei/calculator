@@ -10,7 +10,7 @@ class CalculatorTest {
 
     @Test
     void addWorks() {
-        assertEquals(5.0, calculator.eval("2", "+", "2"));
+        assertEquals(4.0, calculator.eval("2", "+", "2"));
     }
 
     @Test
